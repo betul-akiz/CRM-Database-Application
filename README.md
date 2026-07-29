@@ -9,19 +9,22 @@ A comprehensive, relational database architecture designed for a ride-hailing an
 
 ## 📌 Project Overview (English)
 
-** This project is an end-to-end database platform developed to manage complex mobility operations. Built upon Industrial Engineering and Data Architecture principles, the system handles dynamic pricing/discounts, multi-tiered driver commissions, geolocation-based driver-trip matching, and comprehensive feedback management.
+** This project is an end-to-end mobility platform combining a robust SQL relational database with a C# Windows Forms Executive Admin Panel. Designed with Industrial Engineering and Data Analytics principles, the system processes ride-hailing workflows, driver-passenger segmentations, financial performance, and live database queries.
 
-### 🚀 Key Features & Business Logic
-* **Dynamic Passenger Segmentation:** Classifies riders into Bronze, Silver, Gold, and VIP tiers based on trip volume and ratings, unlocking automated discounts (e.g., 3% per trip for VIPs).
-* **Driver Performance & Commission Tiers:** Segments drivers into Bronze, Silver, and Gold tiers based on completed trips and performance ratings. Higher tiers benefit from lower platform commission fees.
-* **Geofenced Service Matching (`Districts` & `DriverServiceAreas`):** Matches ride requests with drivers based on preferred operational districts (e.g., Izmir Bornova, Bayrakli) to optimize notification delivery.
-* **Comprehensive Trip Architecture (`Trips`):** Integrates passenger, driver, vehicle, and origin-destination district IDs for granular trip tracking.
-* **Financial & Rating Systems (`Payments` & `Ratings`):** Handles multi-channel payments, trip issue logs, and mutual rating/review systems between drivers and passengers.
-* **Promotions & Incentive Engines:** Manages targeted passenger campaigns and driver incentive awards (`Campaigns`, `Incentives`), supporting segment-specific targeting via `TargetSegmentID`.
-* **Flexible Support Tickets (`SupportRequests`):** Supports both trip-specific and general system complaints with optional relation parameters.
-* **Audit Trail (`UserSegmentTransitions`):** Tracks historical segment changes and progression for all users over time.
 
----
+### 🚀 Key Features & C# Admin Panel Capabilities
+* **Executive Login & Role Architecture:** Fullscreen splash screen followed by role selection and secure admin authentication.
+* **Passenger & Driver Management:** Dynamic filtering via DataGridView and ComboBoxes based on tier segments (Bronze, Silver, Gold, VIP) with real-time total count labels.
+* **Risk Management Engine:** One-click filtering to highlight high-risk drivers with performance ratings below 3.0.
+* **Promotional Dashboards:** Centralized campaign and driver incentive tracking with live active count indicators.
+* **Executive Analytics & Data Visualization:**
+  * Trip volume distribution by cities.
+  * Passenger gender demographic distribution.
+  * Top 5 drivers generating the highest revenue.
+  * Hourly demand peak intensity charts during the day.
+  * Real-time platform total revenue and total distance metrics.
+* **Live Database Query Console:** Built-in SQL terminal allowing execution of custom relational queries (e.g., `SELECT * FROM Passengers WHERE City='İstanbul'`) directly from the UI.
+
 
 ## 🛠️ Relational Database Schema / Tables
 
@@ -38,18 +41,25 @@ A comprehensive, relational database architecture designed for a ride-hailing an
 
 ## 📌 Proje Özeti (Türkçe)
 
-**Bu proje ulaşım ve araç çağırma (Uber/Martı TAG benzeri) operasyonlarını yönetmek üzere tasarlanmış kapsamlı bir ilişkisel veritabanı sistemidir. Endüstri mühendisliği ve veri mimarisi ilkeleri doğrultusunda geliştirilen bu proje; dinamik fiyatlandırma, sürücü komisyon kademelendirmesi, bölge bazlı bildirim eşleştirmesi ve kampanya yönetim süreçlerini kapsar.
+**Bu proje ulaşım ve araç çağırma (Uber/Martı TAG benzeri) operasyonlarını yönetmek üzere tasarlanmış kapsamlı bir ilişkisel veritabanı ve **C# Windows Forms Yönetici Paneli** entegrasyonuna sahip kapsamlı bir mühendislik sistemidir. Endüstri mühendisliği ve veri mimarisi ilkeleri doğrultusunda geliştirilen bu proje; dinamik fiyatlandırma, sürücü komisyon kademelendirmesi, bölge bazlı bildirim eşleştirmesi ve kampanya yönetim süreçlerini kapsar.
 
-### 🚀 Öne Çıkan Sistem Özellikleri
-* **Dinamik Yolcu Segmentasyonu:** Yolcuları sürüş sayısı ve puanına göre Bronze, Silver, Gold ve VIP olarak ayırır; segmente özel otomatik indirim tanımlar.
-* **Sürücü Performansı ve Komisyon Modeli:** Sürücüleri sürüş ve puan kriterlerine göre kademelendirir. Segment yükseldikçe platformun sürücüden aldığı komisyon oranı düşer.
-* **Bölge Bazlı Eşleştirme (`Districts` & `DriverServiceAreas`):** Sürücülerin hizmet vermeyi kabul ettiği ilçeleri (Örn: İzmir Bornova, Bayraklı) eşleştirerek sürücülere doğru bölge bildirimlerinin gitmesini sağlar.
-* **Sürüş Yönetimi (`Trips`):** Yolcu, sürücü, araç, başlangıç ve bitiş ilçe verilerini bağlayan merkezi sürüş mimarisi.
-* **Ödeme, Puanlama ve Destek Mimarisi:** Karşılıklı puan/yorum mekanizması (`Ratings`), ödeme detayları (`Payments`) ve yolculuktan bağımsız da oluşturulabilen esnek destek talebi (`SupportRequests`) yapısı.
-* **Segment Geçiş Geçmişi (`UserSegmentTransitions`):** Yolcu ve sürücülerin zaman içindeki statü değişimlerini izleyen denetim izi.
+### 🚀 C# Yönetici Paneli ve Sistem Özellikleri
+* **Gelişmiş Yönetici Arayüzü:** Açılış ekranı (Splash Screen), rol seçimi ve şifreli güvenli admin girişi.
+* **Yolcu ve Sürücü Segmentasyonu:** DataGridView ile bağlanan veritabanı üzerinden segmente göre (Bronze, Silver, Gold, VIP) anlık listeleme ve toplam kişi sayısı sayaçları.
+* **Yüksek Risk Grubu Tespiti:** Puanı 3.0’ın altında olan sürücüleri tek tıkla listeleyen risk yönetim butonu.
+* **Kampanya ve Teşvik Paneli:** Aktif kampanya ve teşviklerin anlık sayısal takibi.
+* **İş Zekası ve Grafik Analizleri:**
+  * Şehirlere göre toplam sefer sayıları grafiği.
+  * Yolcu cinsiyet dağılımı analizi.
+  * En yüksek ciro sağlayan ilk 5 sürücü sıralaması.
+  * Gün içindeki saatlik talep yoğunluk grafiği.
+  * Platform toplam cirosu ve kat edilen toplam mesafe göstergeleri.
+* **Canlı Veritabanı Konsolu:** Uygulama içinden doğrudan SQL sorguları çalıştırmaya olanak tanıyan entegre konsol arayüzü.
 
 ---
 
+
 ## 🛠️ Kullanılan Teknolojiler
-* **Database:** SQL Server / Relational Database (RDBMS)
-* **Application / UI:** C# Windows Forms / .NET
+* **Database:** SQL Server (Relational Database - RDBMS)
+* **Application / UI:** C# (.NET Framework / Windows Forms)
+* **Analytics:** Chart Controls & DataGridView Integration
